@@ -1,0 +1,26 @@
+@charset "utf-8";
+
+/*2020 jiyun lim : reset.css */
+* , * :after, * :before {
+	box-sizing: border-box;
+	padding:0;
+	margin:0;
+}
+body {
+/*	font-family: "맑은 고딕", "Malgun Gothic",  sans-serif; //default */
+	font-weight: normal;
+	font-size: 14px;
+	line-height: normal;
+	color: #222;
+	}
+ul,li,ol,a {list-style: none; text-decoration: none; color:#222}
+table, table * {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+.hidden{display: block; text-indent: -999em}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}

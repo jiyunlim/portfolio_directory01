@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<!-- S: 메타태그 -->
+	<meta charset="UTF-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<!-- E: 메타태그 -->
+	<title>Cordial's Groupware eGate EIP / header common</title>
+	<link rel="stylesheet" href="../css/style.css">
+	<script src="../js/jquery.cores.js"></script>
+<!-- notice : 
+	> 웹표준 문법 준수
+	> 메뉴 디자인을 스타일 별 공통으로 작업함, 구분은 class명 style_type0*으로 구분  
+	> html5 기반으로 작업 (버전 이하일 경우 html5shiv.js 필요)
+	> 기본스크립트 연습하기
+-->
+</head>
+<body>
+	<header class="sytle_type03">
+		<div id="egate_head_wrap">
+			<!-- top menu  -->
+			<!-- logo  -->
+			<div id="egate_logo">
+				<div class="logobx_w"><a href="#" class="hidden">logo</a></div>	
+			</div>
+			<!-- S: GNB menu  -->
+			<div id="egate_gnb_wrap">
+				<div id="egate_gnb">
+					<div class="gnb_title">
+						<ul>
+							<li title="My 채널"><a href="#">My 채널</a></li>
+							<li title="전자결재"><a href="#">전자결재</a></li>
+							<li title="협업"><a href="#">협업</a></li>
+							<li title="정보공간"><a href="#">정보공간</a></li>
+						</ul>	
+					</div>
+					<ul class="gnb_list">
+						<li title="메일"><a href="#">메일</a></li>
+						<li title="주소록"><a href="#">주소록</a></li>
+						<li title="캘린더"><a href="#">캘린더</a></li>
+						<li title="업무알람"><a href="#">나의업무알람</a></li>
+						<li title="할일메모"><a href="#">할일</a></li>
+						<li title="나의북마크"><a href="#">나의북마크</a></li>
+					</ul>
+					<ul class="gnb_list">
+						<li title="문서작성(임시)"><a href="#">문서작성</a></li>
+						<li title="결재진행함"><a href="#">결재진행함</a></li>
+						<li title="결재완결함"><a href="#">결재완결함</a></li>
+					</ul>
+					<ul class="gnb_list">
+						<li title="팀커뮤니티"><a href="#">팀커뮤니티</a></li>
+						<li title="스피드"><a href="#">스피드</a></li>
+						<li title="토론방"><a href="#">토론방</a></li>
+						<li title="소통방"><a href="#">소통방</a></li>
+						<li title="온라인회의"><a href="#">온라인회의</a></li>
+						<li title="워크스페이스"><a href="#">워크스페이스</a></li>
+						<li title="업무관리"><a href="#">업무관리</a></li>
+						<li title="블로그"><a href="#">블로그</a></li>
+					</ul>
+					<ul class="gnb_list">
+						<li title="게시판"><a href="#">게시판</a></li>
+						<li title="사규"><a href="#">사규/매뉴얼</a></li>
+						<li title="동호회"><a href="#">동호회</a></li>
+						<li title="업무매뉴얼"><a href="#">업무메뉴얼</a></li>
+						<li title="통합Q＆A"><a href="#">통합Q&amp;A</a></li>
+						<li title="업무제안"><a href="#">업무제안</a></li>
+						<li title="플레이"><a href="#">플레이</a></li>
+					</ul>
+				</div>
+			</div>
+			<!-- E: GNB menu  -->
+			<!-- top util  -->
+			<div id="egate_util">
+				<ul class="top_utilbx">
+					<li><span title="검색"><i class="icon-search-1"></i>검색</span></li>
+					<li><span title="알림"><i class="icon-bell-alt"></i>알림</span></li>
+					<li><span title="메일"><i class="icon-mail-alt"></i>메일</span></li>
+					<li><span title="결재"><i class="icon-clipboard"></i>결재</span></li>
+					<li><span title="포틀릿설정"><i class="icon-th-large" ></i>포틀릿설정</span></li>
+					<li><span title="환경설정"><i class="icon-cog-alt"></i>환경설정</span></li>
+				</ul>
+			</div>
+		</div>
+	</header>
+	<script language="javascript" type="text/javascript">
+		$(document).ready(function(){
+			$(".sytle_type03 #egate_gnb_wrap").height(60 + "px");
+			var gnbHeight = $(".sytle_type03 #egate_gnb").height();
+
+			$(".gnb_title").off().click(function(){
+				if($(this).hasClass('on')){
+					$(this).removeClass('on');
+					$(".sytle_type03 #egate_gnb_wrap").css({
+						"height": "60px"
+						//"borderBottom": " 0"
+					});
+				}else{
+					$(this).addClass('on');
+					$(".sytle_type03 #egate_gnb_wrap").css({
+						"height": gnbHeight + "px"
+						//"borderBottom": " 1px solid #cdcdcd"
+					});
+				}
+			});
+				
+		});
+	</script>	
+	<!--S : top search content  -->
+		<div id="egate_top_content" class="full_search">
+			<div class="top_contentbx">
+				<div class="selecbx">
+					<select id="search_select">
+						<option value="search" selected="selected">통합검색</option>
+						<option value="staff">임직원검색</option>
+					</select>
+				</div>
+				<div class="inputbx">
+					<input type="text" name="sch" id="">
+					<button class="sch_entr_btn"></button>	
+				</div>
+				<div class="close_btn"><button type="button" class="sch_close_btn" title="close"></button></div>
+			</div>
+		</div>
+		<script language="javascript" type="text/javascript">
+			$(".top_utilbx > li:first-child").off().click(function(){
+				//alert()
+				$(".full_search").css({
+					"right" : "0"
+				});
+				$(".full_search .close_btn").click(function(){
+					$(".full_search").css({
+						"right" : "-100%"
+					});
+				});
+			});
+		</script>
+	<!--E : top search content  -->
+<!--2020-01-29  -->
+	<!--S : portal container  -->
+		<div id="egate_portal_container">
+			<div id="portal_container">
+				<div class="inner_container">
+					<section class="col_horizontal">
+						<div class="egate_portlet_wrap mail">
+							<div class="portlet_header">
+								<div class="pt_title"><span>mail</span></div>
+								<div class="func_btn"><button class="more_btn"><span></span><span></span></button></div>
+							</div>
+							<div class="portlet_body">
+								<ul>
+									<li class="list">
+										<ul>
+											<li class="name">Mail</li>
+											<li class="time">2020.01.27 PM 11:30</li>
+											<li class="star"></li>
+											<li class="mail_subject subject">Resource plan Remind : 2020-01-27</li>
+										</ul>
+									</li>
+									<li class="list">
+										<ul>
+											<li class="name">Mail</li>
+											<li class="time">2020.01.27 PM 11:30</li>
+											<li class="star"></li>
+											<li class="mail_subject subject">Resource plan Remind : 2020-01-27</li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="egate_portlet_wrap feed">
+							<div class="portlet_header">
+								<div class="pt_title"><span>feed</span></div>
+								<div class="func_btn"><button class="more_btn"><span></span><span></span></button></div>
+							</div>
+							<div class="portlet_body">
+								<ul>
+									<li class="list">
+										<ul>
+											<li class="name">smith</li>
+											<li class="time">2020.01.27 PM 11:30</li>
+											<li class="star"></li>
+											<li class="mail_subject subject">Resource plan Remind : 2020-01-27</li>
+										</ul>
+									</li>
+									<li class="list">
+										<ul>
+											<li class="name">john</li>
+											<li class="time">2020.01.27 PM 11:30</li>
+											<li class="star"></li>
+											<li class="mail_subject subject">Resource plan Remind : 2020-01-27</li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="egate_portlet_wrap aprv">
+							<div class="portlet_header">
+								<div class="pt_title"><span>approve</span></div>
+								<div class="func_btn"><button class="more_btn"><span></span><span></span></button></div>
+							</div>
+							<div class="portlet_body">
+								<ul>
+									<li class="list">
+										<ul>
+											<li class="name">grace</li>
+											<li class="time">2020.01.27 PM 11:30</li>
+											<li class="star"></li>
+											<li class="mail_subject subject">Resource plan Remind : 2020-01-27</li>
+										</ul>
+									</li>
+									<li class="list">
+										<ul>
+											<li class="name">sarah</li>
+											<li class="time">2020.01.27 PM 11:30</li>
+											<li class="star"></li>
+											<li class="mail_subject subject">Resource plan Remind : 2020-01-27</li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</section>
+				</div>
+			</div>
+		</div>
+	<!--E : portal container  -->
+
+</body>
+</html>
