@@ -3,7 +3,7 @@
 html{min-width: 1024px;}
 /* default Color: #0096d6*/
 /*=========================style : start*/
-header{width:100%; position:relative;  height: 60px;}
+header{width:100%; position:relative;  height: 60px; z-index: 10;}
 /*header:  layout */
 #egate_head_wrap{overflow: hidden; border-bottom:1px solid #cdcdcd;}
 #egate_topmenu{float: left; min-width:59px; min-height: 59px}
@@ -115,8 +115,8 @@ body{background-color: #f6f6f6;}
 #egate_portal_container {overflow-y: auto;}
 #portal_container {}
 #portal_container .inner_container { max-width: 1280px; min-width: 820px; margin: 15px auto 40px;}
-#portal_container .inner_container section.col_horizontal { position: relative;  overflow: hidden;  clear: both;  display: flex; display: -webkit-flex;  flex-wrap: nowrap;}
-.egate_portlet_wrap {background-color: #fff; flex: auto;display: flex;display: -webkit-flex;padding: 10px;margin: 15px 7.5px;border: 1px solid #ccc;border-radius: 0.5em;}
+#portal_container .inner_container section.col_horizontal { position: relative; /* overflow: hidden; */ clear: both;  display: flex; display: -webkit-flex;  flex-wrap: nowrap;}
+.egate_portlet_wrap {background-color: #fff;flex: auto;display: flex;display: -webkit-flex;padding: 10px;margin: 15px 7.5px 0px;  border-radius: 0.5em;box-shadow: 3px 3px 5px 0px #00000029;}
 .portlet_header { min-width: 80px;}
 .portlet_header .pt_title > span { text-transform: capitalize;}
 .portlet_header .func_btn {}
@@ -131,3 +131,6 @@ body{background-color: #f6f6f6;}
 .egate_portlet_wrap.mail .pt_title > span:after{content:'\f0e0'; color: orange}
 .egate_portlet_wrap.feed .pt_title > span:after{content:'\f0f3'; color: skyblue}
 .egate_portlet_wrap.aprv .pt_title > span:after{content:'\e802'; color: blueviolet}
+
+.egate_portlet_wrap.banner > .img_bx {width: 100% ; }
+.egate_portlet_wrap.banner > .img_bx > img {width: 100% ; height: 100%;  }
