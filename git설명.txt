@@ -1,0 +1,83 @@
+git 설치
+
+1. https://git-scm.com/ 에서 다운로드
+2. 설치시 여러체크항목이 있는데 무시하고 next만 눌러서 설치
+
+
+
+git 저장소 생성
+
+1. gitlab 회원가입
+2. gitLab 로그인
+3. container 오른쪽 상단 "New project" 클릭
+4. 프로젝트에 대한 제목,설명등 입력
+(private:로그인하고 관리자가 초대한 유저만 접근, internal:로그인한 유저만 접근, public:로그인 상관없이 누구나 접근)
+5. 생성된 프로젝트로 들어가면 SSH,HTTPS형식의 주소가 있는데 해당 프로젝트의 git주소임
+
+
+
+
+
+(자신이 처음으로 git저장소를 생성하고, 처음으로 git저장소에 파일을 저장할 경우)
+1-1. git init / git 셋팅
+
+- git 셋팅할 폴더의 디렉토리 주소 cmd창 열기(셋팅할 폴더화면에서 shift+우클릭 으로 'PowerShell창 열기')
+- git init 명령어를 입력
+- 폴더에 숨긴파일형식으로 .git 생성
+
+
+
+
+
+(다른 사람이 이미 git저장소를 생성했고, git저장소에 파일이 저장되어있었을 경우)
+1-2. git clone / 저장소에 있는 git 복제해오기
+ 
+- 복제할 위치 디렉토리주소 cmd창 열기
+- git clone 저장소주소 (git 저장소에 표시되어있는 SSH 또는 HTTPS 주소)
+
+2. git add / 파일을 add상태로 만들기 (Untracked파일에서 Tracked파일로 만들기)
+- git add 파일명
+- git add . (Untracked모든파일 한번에 add)
+
+3. git commit / 커밋하기
+
+- git commit -m "설명" (설명:어떤 부분을 수정,추가했는지 설명 / 설명을 쓰기싫다면 스페이스바로 공백문자넣음 " ")
+
+* git commit -am "설명" / add+commit 동시에 하는 명령어
+
+* 로그인을 안할경우 에러가 뜰수있음.
+  gitlab가입한 이메일,이름으로 로그인을 함
+  git config --global user.email "내 이메일" 또는 git config --global user.name "내 이름"
+
+(생략가능한듯?)
+4. git remote / 저장소의 이름을 지정하기
+
+- git remote add 저장소이름 주소
+  ex) git remote origin git@gitlab.com:dkwlfkwl/db-asset-kyb.git
+      - git@gitlab.com:dkwlfkwl/db-asset-kyb.git 저장소의 이름을 origin으로 명명한다.
+
+5. git push / 수정,추가한 내용 저장소로 넣기
+- git push / git push 저장소이름 / git push 저장소이름 master
+
+*충돌
+(개발자1명, 퍼블리셔1명 같이 같은 파일을 다루지 않는 경우 / 즉, 작업하는 파일들이 작업자마다 다를경우)
+(이런 경우에는 충돌이라고까지는 말하는거 같지는 않음 ㅇㅇ)
+저장소에서 내려받아 수정,추가 작업을 하는 도중에 다른 작업자가 push하여 내local파일과 저장소파일이 다를경우인데
+이때는 add,commit까지 별문제 없이 진행되지만 push할때 오류가 뜰것이다.
+이때 git pull 명령어를 사용해 저장소파일을 내려받고 다시 push를 하면 별문제 없이 push됨
+
+(작업하는 파일이 같을경우)
+이때는 add까지 진행되고 commit부터 오류가 뜰것이다?
+
+
+
+
+commit 한 내용을 취소하고 싶은때 'git revert HEAD' (저장소꺼도 지워지지만 local꺼도 지워짐)
+
+push한거 취소
+git reset HEAD^
+git push origin -f
+
+
+
+자세한내용 : https://www.zerocho.com/category/Git
