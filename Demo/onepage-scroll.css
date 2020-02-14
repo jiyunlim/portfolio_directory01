@@ -97,7 +97,10 @@ section[class^= 'page'].active .txt.fade_left{
 	opacity: 1;
 	filter: alpha(opacity=1);
 	}
-
+/*fade delay time*/
+section[class^= 'page2'].active .txt{
+	transition-delay: .6s;
+	}
 section[class^= 'page3'].active .txt{
 	transition-delay: .6s;
 	}
