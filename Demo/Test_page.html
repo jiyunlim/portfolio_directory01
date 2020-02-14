@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="title" content="jQuery One Page Scroll by Pete R. | The Pete Design" />
+	<meta name="description" content="Create an Apple-like one page scroller website (iPhone 5S website) with One Page Scroll plugin" />
+	<meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, minimum-scale=1, user-scalable=no">
+	<title>Test page demo</title>
+	<!--js src -->
+	<script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="jquery.onepage-scroll.js"></script>
+	<script type="text/javascript" src="jquery.fadethis.min.js"></script>
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+	<!--css src -->
+	<link href='onepage-scroll.css' rel='stylesheet' type='text/css'>
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+	<script>
+		$(document).ready(function(){
+			$(".main").onepage_scroll({
+				   sectionContainer: "section",     
+				   easing: "ease",                  
+				   animationTime: 1000,            
+				   pagination: true,             
+				   updateURL: false,              
+				   loop: false,                     
+				   keyboard: true,                  
+				   responsiveFallback: false ,     
+				   direction: "vertical"          
+				});
+				/*To top*/
+				$(".scroll-top").click(function () {
+					$(".main").moveTo(1);
+					document.location.reload(href);
+				});	
+						
+			// 	AOS 실행
+			if( $("section").hasClass('active') ){
+				//debugger;
+				//alert();
+				AOS.init();
+			};
+		});
+	</script>
+</head>
+<body>
+	<div id="header" style="height: 40px; background-color: #222; "></div>
+	<div class="wrapper">
+		  <div class="main">
+			<section class="page1" style="background-color: #c1d8f1;">
+				<div class="page_container" >
+					<h1 class="txt fade_up">fade_up: One Page Scroll</h1>
+					<h2 class="txt fade_left">fade_left: Ready-to-use plugin</h1>
+					<h3>Create an Apple-like one page scroller website (iPhone 5S website) with One Page Scroll plugin</h2>
+				</div>
+			</section>
+			<section class="page2" style="background-color: #f1c1c1 ">
+				<div class="page_container" >
+					<h2 class="txt fade_left">All you need is an HTML markup, call the script and BAM!</h2>
+				</div>
+			</section>
+			<section class="page3" style="background-color: #daefdd;">
+				<div class="page_container">
+					<h1 class="txt fade_up"> fade_up: One Page Scroll</h1>
+					<h2 class="txt fade_left">fade_left: Ready-to-use plugin</h1>
+	 				<ul class="img_array" > 
+						<li class="slide-bottom one">
+							<div><img src="test-001.png" alt=""></div>
+						</li>
+						<li class="slide-bottom two">
+							<div><img src="test-001.png" alt=""></div>
+						</li>
+						<li class="slide-bottom three">
+							<div><img src="test-001.png" alt=""></div>
+						</li>
+					</ul>
+				</div>
+				
+			</section>
+			<section class="page4" style="background-color: #c1d8f1;">
+				<div class="page_container">
+					<h1>Pretty Neat Eh?</h1>
+					<h2>You can customise the animation timing, the selector or even the animation easing using CSS3. I can't wait to see what you guys will come up with. Don't forget to grab them for free on Github'</h2>
+				</div>
+			</section>
+			<section class="page5">
+				<h1 class="animate hideme" >One Page Scroll</h1>
+				<h1>푸하하핳</h1>
+			</section>
+		</div>
+	</div>
+	<div id="footer" style="height: 40px;  background-color: #222; position: fixed; bottom: 0; left:0; right: 0;"></div>
+    <a href="#" class="scroll-top">Scroll</a>
+	<script>
+
+	</script>
+</body>
+</html>
