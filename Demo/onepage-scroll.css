@@ -53,13 +53,15 @@ body,html {display: block;  position: static;  padding: 0;  width: 100%;  height
 section.page3 .img_array{position: absolute;top: 50%;left: 80px;right: 80px;width: auto;display: flex;flex-wrap: nowrap; margin: -236px 0 0;}
 section.page3 .img_array > li { flex: auto;}
 section.page3 .img_array > li img {display: block; margin: 0 auto;}
+
 /* fade action */
 section[class^= 'page'] .txt{
 	-webkit-transition: all 1s cubic-bezier(0.165,  0.84,  0.44,  1);
     transition: all 1s cubic-bezier(0.165,  0.84,  0.44,  1);
+	transition-delay: .3s;
 	}
 /*fade-up*/
-section[class^= 'page'] .txt.fade_up{
+section[class^= 'page'] .fade_up{
 	-webkit-transform: translate(0, 50px);
     -moz-transform: translate(0, 50px);
     -ms-transform: translate(0, 50px);
@@ -68,18 +70,9 @@ section[class^= 'page'] .txt.fade_up{
     opacity: 0;
     filter: alpha(opacity=0);
 	}
-section[class^= 'page'].active .txt.fade_up{
-	-webkit-transform: translate(0, 0px);
-    -moz-transform: translate(0, 0px);
-    -ms-transform: translate(0, 0px);
-    -o-transform: translate(0, 0px);
-    transform: translate(0, 0px);
-	opacity: 1;
-	filter: alpha(opacity=1);
-	}
 
 /*fade-left*/
-section[class^= 'page'] .txt.fade_left{
+section[class^= 'page'] .fade_left{
 	-webkit-transform: translate(-150px, 0px);
     -moz-transform: translate(-150px, 0px);
     -ms-transform: translate(-150px, 0px);
@@ -88,7 +81,20 @@ section[class^= 'page'] .txt.fade_left{
     opacity: 0;
     filter: alpha(opacity=0);
 	}
-section[class^= 'page'].active .txt.fade_left{
+/*fade-right*/
+section[class^= 'page'] .fade_right{
+	-webkit-transform: translate(150px, 0px);
+    -moz-transform: translate(150px, 0px);
+    -ms-transform: translate(150px, 0px);
+    -o-transform: translate(150px, 0px);
+    transform: translate(150px, 0px);
+    opacity: 0;
+    filter: alpha(opacity=0);
+	}
+/*fade active*/
+section[class^= 'page'].active .fade_up,
+section[class^= 'page'].active .fade_left,
+section[class^= 'page'].active .fade_right{
 	-webkit-transform: translate(0, 0px);
     -moz-transform: translate(0, 0px);
     -ms-transform: translate(0, 0px);
@@ -97,6 +103,7 @@ section[class^= 'page'].active .txt.fade_left{
 	opacity: 1;
 	filter: alpha(opacity=1);
 	}
+
 /*fade delay time*/
 section[class^= 'page2'].active .txt{
 	transition-delay: .6s;
@@ -105,3 +112,18 @@ section[class^= 'page3'].active .txt{
 	transition-delay: .6s;
 	}
 
+section[class^= 'page3'].active .fade_up.one{
+	-webkit-transition: all 1.5s cubic-bezier(0.165,  0.84,  0.44,  1);
+    transition: all 1.5s cubic-bezier(0.165,  0.84,  0.44,  1);
+	transition-delay: 1s;
+}
+section[class^= 'page3'].active .fade_up.two{
+	-webkit-transition: all 1.5s cubic-bezier(0.165,  0.84,  0.44,  1);
+    transition: all 1.5s cubic-bezier(0.165,  0.84,  0.44,  1);
+	transition-delay: 1.2s;
+}
+section[class^= 'page3'].active .fade_up.three{
+	-webkit-transition: all 1.5s cubic-bezier(0.165,  0.84,  0.44,  1);
+    transition: all 1.5s cubic-bezier(0.165,  0.84,  0.44,  1);
+	transition-delay: 1.6s;
+}
