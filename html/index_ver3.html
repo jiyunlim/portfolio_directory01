@@ -9,6 +9,7 @@
 	<title>Cordial's Groupware eGate EIP / header common</title>
 	<link rel="stylesheet" href="../css/style.css">
 	<script src="../js/jquery.cores.js"></script>
+	<script src="../js/jquery.easypiechart.js"></script>
 <!-- notice : 
 	> 웹표준 문법 준수
 	> 메뉴 디자인을 스타일 별 공통으로 작업함, 구분은 class명 style_type0*으로 구분  
@@ -226,17 +227,47 @@
 							<div class="img_bx"><img src="../images/img/test01_img.jpg" alt="테스트 이미지"></div>
 						</div>
 					</section>
-					<section class="col_vertical">
+					<section class="col_horizontal">
+						<div class="egate_portlet_wrap chart_pgin">
+							<div class="portlet_header">
+								<div class="pt_title"><span>chart UI</span></div>
+								<div class="func_btn"><button class="more_btn"><span></span><span></span></button></div>
+							</div>
+							<div class="portlet_body chart1">
+								<div class="chart chrt_color_b" data-percent="73"><span>73</span>%</div>
+								<div class="chart chrt_color_mnt" data-percent="52" ><span>52</span>%</div>
+							</div>
+						</div>
 						<div class="egate_portlet_wrap chart_pgin">
 							<div class="portlet_header">
 								<div class="pt_title"><span>chart UI</span></div>
 								<div class="func_btn"><button class="more_btn"><span></span><span></span></button></div>
 							</div>
 							<div class="portlet_body">
-								
 							</div>
 						</div>
-						<div class="egate_portlet_wrap chart_pgin"></div>
+						<script>
+							$(document).ready(function(){
+								$('.chart').easyPieChart({
+								barColor: '#1f7bb6',
+								trackColor: '#f2f2f2',
+								scaleColor: 'transparent',
+								lineCap: 'butt',
+								lineWidth: 15,
+								size: 150,
+								animate: 900,
+								onStart: $.noop,
+								onStop: $.noop
+							  });
+							// color 
+								$('.chart.chrt_color_b').easyPieChart({
+									//barColor:'#1f7bb6' 
+								});
+								$('.chachrt_color_mnt').easyPieChart({
+									//barColor:'#27b6af' 
+								});
+							});
+						</script>
 					</section>
 				</div>
 			</div>

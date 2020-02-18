@@ -115,7 +115,8 @@ body{background-color: #f6f6f6;}
 #egate_portal_container {overflow-y: auto;}
 #portal_container {}
 #portal_container .inner_container { max-width: 1280px; min-width: 820px; margin: 15px auto 40px;}
-#portal_container .inner_container section.col_horizontal { position: relative; /* overflow: hidden; */ clear: both;  display: flex; display: -webkit-flex;  flex-wrap: nowrap;}
+#portal_container .inner_container section.col_horizontal { position: relative; clear: both;  display: flex; display: -webkit-flex;  flex-wrap: nowrap;}
+#portal_container .inner_container section.col_vertical {}
 .egate_portlet_wrap {background-color: #fff;flex: auto;display: flex;display: -webkit-flex;padding: 10px;margin: 15px 7.5px 0px;  border-radius: 0.5em;box-shadow: 3px 3px 5px 0px #00000029;}
 .portlet_header { min-width: 80px;}
 .portlet_header .pt_title > span { text-transform: capitalize;}
@@ -134,3 +135,6 @@ body{background-color: #f6f6f6;}
 
 .egate_portlet_wrap.banner > .img_bx {width: 100% ; }
 .egate_portlet_wrap.banner > .img_bx > img {width: 100% ; height: 100%;  }
+
+/**/
+.portlet_body{}

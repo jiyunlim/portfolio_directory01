@@ -59,6 +59,7 @@ section[class^= 'page'] .txt{
 	-webkit-transition: all 1s cubic-bezier(0.165,  0.84,  0.44,  1);
     transition: all 1s cubic-bezier(0.165,  0.84,  0.44,  1);
 	transition-delay: .3s;
+	-webkit-transition-delay: .3s;
 	}
 /*fade-up*/
 section[class^= 'page'] .fade_up{
@@ -70,7 +71,6 @@ section[class^= 'page'] .fade_up{
     opacity: 0;
     filter: alpha(opacity=0);
 	}
-
 /*fade-left*/
 section[class^= 'page'] .fade_left{
 	-webkit-transform: translate(-150px, 0px);
@@ -107,11 +107,12 @@ section[class^= 'page'].active .fade_right{
 /*fade delay time*/
 section[class^= 'page2'].active .txt{
 	transition-delay: .6s;
+	-webkit-transition-delay: .6s;
 	}
 section[class^= 'page3'].active .txt{
 	transition-delay: .6s;
+	-webkit-transition-delay: .6s;
 	}
-
 section[class^= 'page3'].active .fade_up.one{
 	-webkit-transition: all 1.5s cubic-bezier(0.165,  0.84,  0.44,  1);
     transition: all 1.5s cubic-bezier(0.165,  0.84,  0.44,  1);
